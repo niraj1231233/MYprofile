@@ -1,0 +1,166 @@
+/**
+  Browser should support Houdini API
+*/
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 90deg;
+    inherits: false;
+  }
+  
+  :root {
+    --bg-background: #111827;
+    --clr-card: #1f2937;
+    --clr-1: #6420aa;
+    --clr-2: #ff3ea5;
+    --clr-3: #ff7ed4;
+    --clr-button: #ff3ea5;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  
+  main {
+    height: auto;    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap; /* Allows the cards to wrap to the next line */
+    gap: 8rem; /* Gap between the cards */
+    justify-content: center; /* Center the cards within the container */
+    padding: 4rem; /* Padding around the container */
+  }
+  
+  .card {
+    position: relative;
+    min-height: 24rem; /* Minimum height for the card */
+    width: 100%; /* Make the card responsive */
+    max-width: 21rem; /* Set a maximum width for the card */
+    border-radius: 0.45rem;
+    cursor: pointer;
+    background-color: var(--clr-card);
+    padding: 1rem; /* Add padding for content */
+    text-align: center; /* Center align text */
+    color: white; /* Text color */
+    transition: transform 0.2s; /* Smooth hover effect */
+  }
+
+  
+  .card-image {
+    width: 100px; /* Set image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 0.25rem; /* Rounded corners for image */
+    transition: transform 0.2s; /* Smooth hover effect */
+  }
+  
+  .card-image:hover {
+    transform: scale(1.1); /* Scale image up on hover */
+  }
+  
+  .card-title {
+    margin-bottom: 0.5rem; /* Spacing below title */
+  }
+  
+  .card-description {
+    margin: 0.5rem 0; /* Spacing above and below description */
+  }
+  
+  .card-button {
+    background-color: var(--clr-button); /* Button color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 0.25rem; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Padding for button */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.2s; /* Smooth hover effect */
+  }
+  
+  .card-button:hover {
+    background-color: #ff1a6d; /* Darker shade on hover */
+  }
+  
+  .card::after,
+  .card::before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    inset: -0.5rem;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-card),
+      var(--clr-1),
+      var(--clr-2),
+      var(--clr-3),
+      var(--clr-2),
+      var(--clr-1),
+      var(--clr-card)
+    );
+    border-radius: inherit;
+    animation: rotate 2.5s linear infinite;
+  }
+  
+  .card::after {
+    filter: blur(3rem);
+  }
+  
+  @keyframes rotate {
+    0% {
+      --gradient-angle: 0deg;
+    }
+    100% {
+      --gradient-angle: 360deg;
+    }
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .container {
+      gap: 3rem; /* Reduce gap between cards */
+      padding: 2rem; /* Adjust padding */
+    }
+  
+    .card {
+      width: calc(100% - 2rem); /* Take more space on smaller screens */
+    }
+  }
+ 
+@media (max-width: 480px) {
+  .container {
+    gap: 5.5rem;
+    padding: 4rem 7.5rem;
+  }
+
+
+
+  .section-heading {
+    font-size: 2rem; /* Smaller heading size */
+    margin-top: 1rem;
+  }
+}
+  
+
+
+  .section-heading {
+    text-align: center; 
+    color: rgb(255, 252, 252); 
+    margin-top: 2rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+
+  }
+
+   span {
+    color: rgb(255, 230, 0);
+  }
