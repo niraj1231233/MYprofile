@@ -48,6 +48,25 @@ function Works() {
           </button>
         </div>
         <div className="card">
+          <h2 className="card-heading">MY OWN PROFILE</h2>
+          <img src="/myprofile.png" alt="Card" className="card-image a" />
+          <p className="card-description">
+             tech used:-
+          </p>
+          <p className="card-description">
+              ReactJs
+          </p>
+          <p className="card-description">
+             CSS
+          </p>
+          <button
+            className="card-button"
+            onClick={() => window.open("https://myprofile-ten-green.vercel.app/", "_blank", "noopener,noreferrer")}
+          >
+           VISIT NOW
+          </button>
+        </div>
+        <div className="card">
           <h2 className="card-heading">DOCTOR-PROFILE</h2>
           <img src=" " alt="Card" className="card-image" />
           <p className="card-description">
@@ -71,14 +90,7 @@ function Works() {
           </p>
           {/* <button className="card-button">Learn More</button> */}
         </div>
-        <div className="card">
-          <h2 className="card-heading">MY OWN PROFILE</h2>
-          <img src=" " alt="Card" className="card-image" />
-          <p className="card-description">
-          COMING SOON...
-          </p>
-          {/* <button className="card-button">Learn More</button> */}
-        </div>
+        
       
         <div className="card">
           <h2 className="card-heading">JWELLERY SHOP</h2>
